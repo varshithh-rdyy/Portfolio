@@ -254,6 +254,14 @@ h1 .mb{text-shadow:-.055em 0 .06em currentColor,.055em 0 .035em color-mix(in srg
 .top div a:hover::after,.top div a:focus-visible::after{transform:scaleX(1)}
 @media(max-width:680px){.top{gap:12px}.top>a:first-child{padding:8px 10px;letter-spacing:.1em}.top div{gap:8px 12px}.top div a{padding:5px 0}}
 @media(prefers-reduced-motion:reduce){.top div a::after{transition:none}}
+
+/* More cinematic scroll entrances and a subtle portrait drift. */
+.rv{scale:.965;filter:blur(7px)}
+.rv.rv{transition:opacity .85s ease,translate .85s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.9,.3,1),scale .85s cubic-bezier(.2,.8,.2,1),filter .85s ease}
+.rv.in{scale:1;filter:blur(0)}
+#about .me{animation:portrait-drift 7.5s ease-in-out infinite}
+@keyframes portrait-drift{0%,100%{translate:0 0}50%{translate:0 -7px}}
+@media(prefers-reduced-motion:reduce){.rv{scale:1;filter:none}.rv.rv{transition:none!important}#about .me{animation:none!important}}
 </style>
 </head>
 <body>
